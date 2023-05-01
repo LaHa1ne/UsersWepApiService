@@ -49,24 +49,5 @@ namespace UsersWepApiService.Controllers
             Response.StatusCode = (int)response.StatusCode;
             return Json(response);
         }
-
-        [AllowAnonymous]
-        [HttpGet]
-        public ActionResult AccessError()
-        {
-            BaseRepsonse <bool> response;
-            if (HttpContext.User.Identity.IsAuthenticated)
-            {
-                response = new AuthorizationRequiredResponse();
-                Response.StatusCode = (int)response.StatusCode;
-                return Json(response);
-            }
-
-            response = new NotAccessResponse();
-            Response.StatusCode = (int)response.StatusCode;
-            return Json(response);
-
-        }
-
     }
 }

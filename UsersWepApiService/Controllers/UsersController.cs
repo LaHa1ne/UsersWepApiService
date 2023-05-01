@@ -94,7 +94,7 @@ namespace UsersWepApiService.Controllers
         [HttpPut]
         public async Task<JsonResult> UpdatePersonalUserData([FromBody, Required] UserPersonalInfoDTO UserPersonalInfo)
         {
-            string RequesterUserGuid = User.FindFirst(x => x.Type == ClaimTypes.NameIdentifier).Value;
+            string RequesterUserGuid = User.FindFirst(x => x.Type == ClaimTypes.NameIdentifier)!.Value;
 
             var IsRequesterUserExists = await _usersService.CheckIsRequesterUserExists(RequesterUserGuid);
             if (!IsRequesterUserExists.Data) return Json(IsRequesterUserExists);

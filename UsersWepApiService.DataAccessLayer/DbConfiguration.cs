@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UsersWepApiService.DataLayer.Entities;
+using UsersWepApiService.DataLayer.Helpers;
 
 namespace UsersWepApiService.DataAccessLayer
 {
@@ -43,7 +44,7 @@ namespace UsersWepApiService.DataAccessLayer
                 .HasOne(u => u.RevokedByUser)
                 .WithMany(u => u.RevokedUsers)
                 .HasForeignKey(u => u.RevokedBy)
-                .HasPrincipalKey(u => u.Login);
+                .HasPrincipalKey(u => u.Login);  
 
         }
     }

@@ -11,6 +11,9 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["UsersWepApiService/UsersWepApiService.csproj", "UsersWepApiService/"]
+COPY ["UsersWepApiService.Services/UsersWepApiService.Services.csproj", "UsersWepApiService.Services/"]
+COPY ["UsersWepApiService.DataAccessLayer/UsersWepApiService.DataAccessLayer.csproj", "UsersWepApiService.DataAccessLayer/"]
+COPY ["UsersWepApiService.DataLayer/UsersWepApiService.DataLayer.csproj", "UsersWepApiService.DataLayer/"]
 RUN dotnet restore "UsersWepApiService/UsersWepApiService.csproj"
 COPY . .
 WORKDIR "/src/UsersWepApiService"
