@@ -20,8 +20,4 @@
     <ProjectReference Include="..\UsersWepApiService.DataLayer\UsersWepApiService.DataLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
-
 </Project>

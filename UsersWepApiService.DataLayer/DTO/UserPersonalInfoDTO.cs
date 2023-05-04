@@ -8,7 +8,7 @@ namespace UsersWepApiService.DataLayer.DTO
 {
     public class UserPersonalInfoDTO
     {
-        public string Guid{ get; set; }
+        public string Guid{ get; set; } = null!;
         public string? Login { get; set; }
         public string? Password { get; set; }
         public string? Name { get; set; }

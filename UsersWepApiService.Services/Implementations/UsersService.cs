@@ -108,10 +108,10 @@ namespace UsersWepApiService.Services.Implementations
                 var user = await _userRepository.GetUserByGuid(Guid.Parse(UserPersonalInfo.Guid));
                 if (user != null)
                 {
-                    if (user.Password == HashPasswordHelper.GetHashPassword(UserPersonalInfo.Password))
+                    if (user.Password == HashPasswordHelper.GetHashPassword(UserPersonalInfo.Password!))
                         return new BaseRepsonse<bool>(Description: "Пароль совпадает со старым", StatusCode: StatusCode.BadRequest);
 
-                    user.Password = HashPasswordHelper.GetHashPassword(UserPersonalInfo.Password);
+                    user.Password = HashPasswordHelper.GetHashPassword(UserPersonalInfo.Password!);
                     user.ModifiedBy = requesterUser.Login;
                     user.ModifiedOn = DateTime.Now;
 
@@ -150,10 +150,10 @@ namespace UsersWepApiService.Services.Implementations
                 var user = await _userRepository.GetUserByGuid(Guid.Parse(UserPersonalInfo.Guid));
                 if (user != null)
                 {
-                    var userWithSameLogin = _userRepository.GetUserByLogin(UserPersonalInfo.Login);
+                    var userWithSameLogin = _userRepository.GetUserByLogin(UserPersonalInfo.Login!);
                     if (userWithSameLogin != null) return new BaseRepsonse<bool>(Description: "Пользователь с таким логином уже существует", StatusCode: StatusCode.BadRequest);
 
-                    user.Login = UserPersonalInfo.Login;
+                    user.Login = UserPersonalInfo.Login!;
                     user.ModifiedBy = requesterUser.Login;
                     user.ModifiedOn = DateTime.Now;
 

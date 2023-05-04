@@ -8,6 +8,6 @@ namespace UsersWepApiService.DataLayer.DTO
 {
     public class AgeDTO
     {
-        public string Age {get; set;}
+        public string? Age { get; set; } 
     }
 }

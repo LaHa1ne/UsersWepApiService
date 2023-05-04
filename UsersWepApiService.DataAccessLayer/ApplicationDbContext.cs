@@ -17,23 +17,12 @@ namespace UsersWepApiService.DataAccessLayer
         {
         }
 
-        /*public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
-        {
-            public ApplicationDbContext CreateDbContext(string[] args)
-            {
-                var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-                optionsBuilder.UseSqlite("Data Source=C:\\Users\\LaHaine\\source\\repos\\UsersWepApiService\\UsersWepApiService\\Database\\UsersWebApiServiceDB2.db");
-
-                return new ApplicationDbContext(optionsBuilder.Options);
-            }
-        }*/
-
         public class BloggingContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
         {
             public ApplicationDbContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-                optionsBuilder.UseSqlite("Data Source=Database\\UsersWebApiServiceDB.db");
+                optionsBuilder.UseSqlite("Data Source=UsersWebApiServiceDB.db"); //после миграции созданную БД (если ее еще нет) необходимо перенести в глайный проект в App_Data
 
                 return new ApplicationDbContext(optionsBuilder.Options);
             }

@@ -77,6 +77,7 @@ namespace UsersWepApiService.Controllers
         ///        "gender": "0",
         ///        "birthday": "2012-12-12T00:00:00"
         ///     }
+        ///     Остальные поля являются необязательными для заполнения/их можно удалить
         ///
         /// </remarks>
         /// <response code="200">Данные успешно обновлены</response>
@@ -115,6 +116,7 @@ namespace UsersWepApiService.Controllers
         ///        "guid": "08db496e-7ca5-487f-81d2-b147fee21fc4",
         ///        "password": "Password",
         ///     }
+        ///     Остальные поля являются необязательными для заполнения/их можно удалить
         ///
         /// </remarks>
         /// <response code="200">Данные успешно обновлены</response>
@@ -155,6 +157,7 @@ namespace UsersWepApiService.Controllers
         ///        "guid": "08db496e-7ca5-487f-81d2-b147fee21fc4",
         ///        "login": "Login",
         ///     }
+        ///     Остальные поля являются необязательными для заполнения/их можно удалить
         ///
         /// </remarks>
         /// <response code="200">Данные успешно обновлены</response>

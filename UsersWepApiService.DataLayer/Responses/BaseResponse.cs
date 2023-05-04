@@ -9,11 +9,13 @@ namespace UsersWepApiService.DataLayer.Responses
 {
     public class BaseRepsonse<Tobject> : IBaseResponse<Tobject>
     {
-        public string Description { get; set; }
+        public string Description { get; set; } = null!;
         public StatusCode StatusCode { get; set; }
-        public Tobject Data { get; set; }
+        public Tobject? Data { get; set; }
 
-        public BaseRepsonse() { }
+        public BaseRepsonse()
+        {
+        }
         public BaseRepsonse(string Description, StatusCode StatusCode) 
         { 
             this.Description = Description;
@@ -23,6 +25,6 @@ namespace UsersWepApiService.DataLayer.Responses
 
     public interface IBaseResponse<Tobject>
     {
-        Tobject Data { get; set; }
+        Tobject? Data { get; set; }
     }
 }

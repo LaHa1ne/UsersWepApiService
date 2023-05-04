@@ -8,6 +8,6 @@ namespace UsersWepApiService.DataLayer.DTO
 {
     public class UserLoginDTO
     {
-        public string Login { get; set; }
+        public string Login { get; set; } = null!;
     }
 }
